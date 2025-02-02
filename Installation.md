@@ -60,7 +60,7 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-a
 minikube version
 ```
 
-### Step 2: Install Kubectl for MiniKube
+### Step 3: Install Kubectl for MiniKube
 
 1) Download kubectl binary setup on minikube.(see document for latest version)
 
@@ -77,5 +77,46 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 3) check kubectl version.
 
 ```
-kubectl version
+kubectl version --client --output=yaml
+```
+
+### Step 4: Start the MiniKube Cluster
+
+1) Start the minikube
+
+```
+minikube start
+
+```
+2) Start the minikube with the docker driver and run. (skip if first step is used)
+
+```
+minikube start --vm-driver docker
+```
+
+3) Check the status of Minikube
+
+```
+minikube status
+```
+
+4) Check Cluster Status, node status and cluster info.
+
+```
+kubectl cluster-info
+kubectl get nodes
+```
+
+5)  to list of addons for minikube
+
+```
+minikube addons list
+```
+
+6) Deploy a Simple App
+
+```
+kubectl create deployment nginx --image=nginx
+kubectl expose deployment nginx --type=NodePort --port=80
+minikube service nginx --url
 ```
