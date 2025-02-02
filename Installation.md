@@ -120,3 +120,16 @@ kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --type=NodePort --port=80
 minikube service nginx --url
 ```
+7) Port-Forward the Nginx Service
+
+-> for local access  
+
+```
+kubectl port-forward svc/nginx 8080:80
+```
+You can access it at: http://localhost:8080
+
+-> for external access
+```
+kubectl port-forward --address 0.0.0.0 svc/nginx 8080:80
+```
