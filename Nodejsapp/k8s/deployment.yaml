@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nodejs
-          image: your-dockerhub-username/nodejs-app:latest  # Replace with your DockerHub username
+          image: swapnil0078/nodejs-app:latest  # Replace with your DockerHub username
           ports:
             - containerPort: 3000
