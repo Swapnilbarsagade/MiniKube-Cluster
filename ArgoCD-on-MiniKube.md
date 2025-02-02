@@ -41,7 +41,7 @@ By default, the ArgoCD server is not exposed outside the cluster. You can expose
 kubectl port-forward svc/argocd-server -n argocd --address 0.0.0.0 8080:443
 ```
 
-You can access it at: http://<your-instance-public-ip>:8080
+You can access it at: http://instance-public-ip:8080
 
 
 ## Troubleshooting

@@ -133,4 +133,4 @@ You can access it at: http://localhost:8080
 ```
 kubectl port-forward --address 0.0.0.0 svc/nginx 8080:80
 ```
-Access it from a browser or API client on another machine using: http://<your-instance-public-ip>:8080
+Access it from a browser or API client on another machine using: http://instance-public-ip:8080
